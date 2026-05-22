@@ -1,0 +1,221 @@
+/* Heredamos la estructura base del layout */
+.main-content {
+  margin-left: 250px;
+  padding: 3rem 5rem; /* Más margen lateral para mejorar la lectura */
+  width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  width: 250px;
+  background-color: #0d0909; /* Más oscuro para el menú */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border-right: 1px solid #2a1f1f;
+  position: fixed; /* Para que no se mueva al hacer scroll */
+  height: 100vh;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 0;
+  gap: 1.5rem;
+}
+
+.sidebar li {
+  color: #a1a1aa;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  
+}
+
+.menu-icon{
+  font-size: 1.2rem;
+}
+
+.sidebar li:hover {
+  color: #ffffff;
+}
+
+
+
+.sidebar-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: #a1a1aa;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* --- CABECERA --- */
+.article-main-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.article-hero-img {
+  width: 100%;
+  height: 500px;
+  background-color: #2a1f1f;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('URL_DE_TU_IMAGEN_PRIME');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.play-button-overlay {
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.play-button-overlay:hover {
+  transform: scale(1.1);
+}
+
+/* --- BARRA META --- */
+.article-meta-bar {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #a1a1aa;
+  font-size: 0.9rem;
+}
+
+.meta-icon {
+  color: #9146FF; /* El morado corporativo */
+}
+
+/* --- CUERPO DEL TEXTO --- */
+.article-body {
+  margin: 3rem 0;
+}
+
+.article-body p {
+  
+  font-size: 1.1rem;
+  line-height: 1.6; /* Espaciado entre líneas para lectura fácil */
+  color: #cccccc;
+  margin-bottom: 1.5rem;
+  text-align: justify; /* Texto cuadrado y limpio */
+}
+
+/* --- COMENTARIOS --- */
+.comments-section {
+  margin-top: 4rem;
+  background-color: #110d0d;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.comments-count {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.comments-count span {
+  font-size: 0.9rem;
+  color: #a1a1aa;
+  margin-left: 1rem;
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.comment-card {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.comment-avatar {
+  width: 50px;
+  height: 50px;
+  background-color: #d8c8c8;
+  border-radius: 4px; /* Cuadrado con bordes suaves como en tu diseño */
+  flex-shrink: 0;
+}
+
+.comment-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.comment-header h4 {
+  font-size: 1.1rem;
+  color: #9146FF;
+  margin: 0;
+}
+
+.comment-time {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.comment-content p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #bbb;
+  margin: 0;
+}
+
+.article-img {
+  width: 50%;
+  height: 400px;
+  background-color: green;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('URL_DE_TU_IMAGEN_PRIME');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}

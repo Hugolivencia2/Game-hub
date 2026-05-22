@@ -1,0 +1,164 @@
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+  margin-left: 250px;
+  padding: 3rem 4rem; /* Ajustado para que encaje mejor */
+  width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* Contenedor del feed de noticias */
+.news-feed {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- LINEA SEPARADORA --- */
+.news-divider {
+  border: none;
+  height: 1px;
+  background-color: #333;
+  margin: 2rem 0; /* Espacio por arriba y por abajo de la línea */
+  width: 100%;
+}
+
+/* =========================================
+   NOTICIAS DESTACADAS (GRANDES)
+========================================= */
+.news-featured {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.featured-img {
+  width: 100%;
+  height: 450px;
+  border-radius: 4px;
+  background-color: #2a1f1f; /* Color base */
+  background-size: cover;
+  background-position: center;
+}
+
+.featured-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+/* =========================================
+   NOTICIAS EN LISTA (PEQUEÑAS)
+========================================= */
+.news-list-item {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+
+.list-img {
+  width: 280px;
+  height: 160px;
+  border-radius: 4px;
+  background-color: #2a1f1f; /* Color base */
+  flex-shrink: 0; /* Evita que la imagen se aplaste */
+  background-size: cover;
+  background-position: center;
+}
+
+.list-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Empuja el título arriba y la metadata abajo */
+  flex-grow: 1;
+  padding: 0.5rem 0;
+}
+
+.list-content h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.list-meta {
+  align-self: flex-end; /* Alinea los textos a la derecha como en tu diseño */
+  text-align: right;
+}
+
+.list-meta .stars {
+  font-size: 0.85rem;
+  color: #cccccc;
+  margin-bottom: 0.3rem;
+}
+
+.list-meta .meta {
+  font-size: 0.8rem;
+  color: #888888;
+}
+
+/* --- CLASES PLACEHOLDER PARA LAS IMÁGENES --- */
+/* (Cuando conectes tu BD, podrás quitar esto y usar la etiqueta <img src={...} /> directamente) */
+.bg-prime {
+  background: linear-gradient(45deg, #2a1f1f, #ff9900);
+}
+.bg-narrativa {
+  background: linear-gradient(45deg, #1a1515, #8a2be2);
+}
+.bg-ff7 {
+  background: linear-gradient(45deg, #1a1515, #00ced1);
+}
+.bg-tomates {
+  background: linear-gradient(45deg, #1a1515, #32cd32);
+}
+.bg-helldivers {
+  background: linear-gradient(45deg, #1a1515, #ffd700);
+}
+
+/* --- PERFIL DEL USUARIO EN LA SIDEBAR (Por si no lo tenías) --- */
+.sidebar-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #f8f8f2;
+}
+.avatar-square {
+  width: 35px;
+  height: 35px;
+  background-color: #e5dada;
+  border-radius: 6px;
+}
+
+.texto-avatar {
+  color: #a1a1aa;
+}
+
+.texto-avatar:hover {
+  color: white;
+  
+}
+.bell-icon {
+  font-size: 1.2rem;
+  color: #a1a1aa;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.bell-icon:hover {
+  color: white;
+}

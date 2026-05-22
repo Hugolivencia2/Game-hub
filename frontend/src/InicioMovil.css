@@ -1,0 +1,246 @@
+/* --- CONTENEDOR PRINCIPAL --- */
+.mobile-layout {
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  position: relative; /* Importante para el menú absoluto */
+}
+
+/* --- HEADER SUPERIOR --- */
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.menu-btn, .profile-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.menu-btn {
+  color: #9146FF; /* Color rojo de tu diseño para el botón menú */
+}
+
+.mobile-brand {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* --- MENÚ LATERAL (LA MAGIA) --- */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: #1c1c1e;
+  z-index: 999; /* Por encima de todo */
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  
+  /* Inicialmente escondido hacia la izquierda */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out; 
+}
+
+/* Esta clase se añade desde React cuando pulsas el botón */
+.mobile-sidebar.open {
+  transform: translateX(0);
+}
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem; /* Espacio superior antes de la línea */
+  border-top: 1px solid #333; /* La línea divisoria ahora se dibuja ARRIBA del perfil */
+  margin-top: auto; /* Refuerza el empuje hacia abajo */
+}
+
+.avatar-placeholder {
+  width: 50px;
+  height: 50px;
+  background-color: #555;
+  border-radius: 8px;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sidebar-nav li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  color: #a1a1aa;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.sidebar-nav li.active {
+  background-color: #9146FF; /* El fondo rojo/morado de tu diseño activo */
+  color: #fff;
+}
+
+.sidebar-nav li:hover {
+  color: white;
+}
+
+/* --- OVERLAY (FONDO OSCURO) --- */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* Negro con 60% transparencia */
+  z-index: 999; /* Justo debajo del menú lateral */
+  
+  /* Inicialmente oculto */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Cuando se abre el menú, el overlay se vuelve visible y clickeable */
+.sidebar-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.mobile-main {
+  padding: 1.5rem;
+}
+
+.greeting-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.greeting-section h2 {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.4rem;
+}
+
+.greeting-section p {
+  margin: 0;
+  color: #a1a1aa;
+  font-size: 0.9rem;
+}
+
+.bell-icon {
+  font-size: 1.2rem;
+  color: #9146FF;
+}
+
+/* Componentes de las tarjetas (simplificado para que lo adaptes a tus imágenes) */
+.hero-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.hero-img {
+  height: 180px;
+  background-color: #333;
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0,0,0,0.6);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.hero-info {
+  padding: 1rem;
+}
+
+.hero-info h3 { margin: 0 0 0.5rem 0; }
+.hero-info p { color: #a1a1aa; font-size: 0.85rem; margin-bottom: 0.5rem; }
+
+/* Grid de 4 elementos */
+.mobile-scroll {
+  display: flex;
+  overflow-x: auto;
+  
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding-bottom: 10px;
+  margin-bottom: 2rem;
+  /* Comportamiento de imán al deslizar (como en apps nativas) */
+  scroll-snap-type: x mandatory; 
+  
+  /* Ocultar la barra de scroll (para que quede limpio) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge */
+}
+
+.mobile-scroll::-webkit-scrollbar{
+  display: none;
+}
+
+.scroll-item{
+  flex: 0 0 45%; 
+  scroll-snap-align: start;
+}
+
+.scroll-item h4{
+  margin: 0;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scroll-item .subtext{
+  color: #888; 
+  font-size: 0.75rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.scroll-item .grid-img {
+  height: 200px;
+  background-color: #333;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.scroll-item h4 { margin: 0; font-size: 0.9rem; }
+.scroll-item .subtext { color: #888; font-size: 0.75rem; margin: 0; }

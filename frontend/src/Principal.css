@@ -1,0 +1,203 @@
+/* --- RESET BÁSICO --- */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #1a1515;
+  color: #f8f8f2;
+  overflow-x: hidden; /* Esto es clave: evita que aparezca una barra de scroll horizontal */
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #1a1515; /* Tono oscuro rojizo del fondo */
+  color: #f8f8f2;
+
+}
+
+/* --- LAYOUT PRINCIPAL (Sidebar + Main) --- */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  width: 250px;
+  background-color: #0d0909; /* Más oscuro para el menú */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border-right: 1px solid #2a1f1f;
+  position: fixed; /* Para que no se mueva al hacer scroll */
+  height: 100vh;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 0;
+  gap: 1.5rem;
+}
+
+.sidebar li {
+  color: #a1a1aa;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  
+}
+
+.menu-icon{
+  font-size: 1.2rem;
+}
+
+.sidebar li:hover {
+  color: #ffffff;
+}
+
+
+
+.sidebar-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: #a1a1aa;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.text-btn:hover {
+  color: #ffffff;
+  font-size: 0.9rem;
+  
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+  margin-left: 250px; /* Deja espacio para el menú fijo */
+  padding: 2rem;
+  width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* --- FILA DE NOTICIAS (Top Grid) --- */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.news-card {
+  background-color: #e5dada;
+  color: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.img-placeholder {
+  height: 150px;
+  background-color: #444; /* Aquí irán tus imágenes reales luego */
+}
+
+.card-text {
+  padding: 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* --- HERO BANNER (Prime Video) --- */
+.hero-banner {
+  background-color: #e5dada;
+  color: #1a1a1a;
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.banner-img {
+  background: linear-gradient(45deg, #ff9900, #ff5500); /* Simula el fondo de Prime */
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.banner-text {
+  padding: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* --- JUEGOS DESTACADOS --- */
+.featured-games h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.game-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.game-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.game-img {
+  width: 200px;
+  height: 120px;
+  background-color: #333; /* Placeholder para la carátula */
+  border-radius: 4px;
+}
+
+.game-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-info .stars {
+  font-size: 0.9rem;
+  color: #cccccc;
+  margin-bottom: 0.5rem;
+}
+
+.game-info .meta {
+  font-size: 0.8rem;
+  color: #888888;
+}

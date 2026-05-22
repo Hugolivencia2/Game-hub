@@ -1,0 +1,377 @@
+/* --- RESET BÁSICO --- */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #1a1515;
+  color: #f8f8f2;
+  overflow-x: hidden; /* Esto es clave: evita que aparezca una barra de scroll horizontal */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #1a1515; /* Tono oscuro rojizo del fondo */
+  color: #f8f8f2;
+}
+
+/* --- LAYOUT PRINCIPAL (Sidebar + Main) --- */
+.layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  width: 250px;
+  background-color: #0d0909; /* Más oscuro para el menú */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  border-right: 1px solid #2a1f1f;
+  position: fixed; /* Para que no se mueva al hacer scroll */
+  height: 100vh;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 0;
+  gap: 1.5rem;
+}
+
+.sidebar li {
+  color: #a1a1aa;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.menu-icon {
+  font-size: 1.2rem;
+}
+
+.sidebar li:hover {
+  color: #ffffff;
+}
+
+.sidebar-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: #a1a1aa;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+  margin-left: 250px; /* Deja espacio para el menú fijo */
+  padding: 2rem;
+  width: calc(100% - 250px);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* --- ESTILOS INTERNOS DEL DASHBOARD --- */
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.neon-card {
+  background-color: #1a1515;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(145, 70, 255, 0.4);
+  box-shadow: 0 0 20px rgba(145, 70, 255, 0.15);
+}
+
+.card-header h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.card-header p {
+  font-size: 0.8rem;
+  color: #a1a1aa;
+  margin-top: 0.3rem;
+}
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: #333;
+  margin: 1.5rem 0;
+}
+
+/* Perfil */
+.profile-body {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  width: 100%;
+}
+.profile-avatar-circle {
+  width: 160px;
+  height: 160px;
+  background-color: #d8c8c8;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.profile-form {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+.form-row {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+.input-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.dark-input {
+  background-color: #221a1a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  height: 45px;
+  padding: 0 1rem;
+  color: white;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+.dark-input:focus {
+  border-color: #9146ff;
+}
+
+/* Lista de usuarios */
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.user-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1515;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #2a1f1f;
+}
+.user-item-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-grow: 1;
+}
+.avatar-small {
+  width: 40px;
+  height: 40px;
+  background-color: #e5dada;
+  border-radius: 8px;
+}
+.user-name {
+  font-size: 0.95rem;
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.action-separator {
+  width: 1px;
+  height: 20px;
+  background-color: #444;
+}
+.action-btn {
+  background: none;
+  border: none;
+  color: #a1a1aa;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.action-btn:hover {
+  color: #ffffff;
+}
+.action-btn.delete:hover {
+  color: #ff4444;
+}
+
+/* =========================================
+   SECCIÓN NOTICIAS (VISTA USUARIO)
+========================================= */
+
+/* Barra de herramientas (Buscador y Filtro) */
+.noticias-toolbar {
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos a la derecha como en tu diseño */
+  gap: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+/* Caja de búsqueda */
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 0 1rem;
+  height: 45px;
+  width: 300px; /* Ancho fijo para el buscador */
+  transition: border-color 0.3s;
+}
+
+.search-box:focus-within {
+  border-color: #9146ff; /* Se ilumina en morado al escribir */
+}
+
+.search-icon {
+  color: #a1a1aa;
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+/* Botón de Filtro / Ordenar */
+.sort-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  border: 1px solid #444;
+  color: #f8f8f2;
+  padding: 0 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 45px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.sort-btn:hover {
+  background-color: #221a1a;
+  border-color: #9146ff;
+}
+
+.sort-icon {
+  font-size: 1.2rem;
+}
+
+/* Cuadrícula de tarjetas de noticias */
+.news-grid-user {
+  display: flex;
+  flex-wrap: wrap; /* Si hay muchas noticias, saltan a la siguiente línea */
+  gap: 2rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Tarjeta de "Añade una noticia" */
+.add-news-card {
+  background-color: #0d0909; /* Un tono muy oscuro para destacar */
+  width: 240px; /* Ancho de la tarjeta */
+  height: 260px; /* Alto de la tarjeta */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.add-news-card:hover {
+  border-color: #9146ff; /* Resplandor morado al pasar el ratón */
+  transform: translateY(-5px); /* Pequeño efecto de elevación */
+  box-shadow: 0 5px 15px rgba(145, 70, 255, 0.1);
+}
+
+.add-news-card p {
+  color: #a1a1aa;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.add-news-card:hover p {
+  color: #ffffff;
+}
+
+/* Círculo con el icono '+' */
+.add-icon-circle {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 1px solid #a1a1aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #a1a1aa;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s;
+}
+
+.add-news-card:hover .add-icon-circle {
+  border-color: #9146ff;
+  color: #9146ff;
+}
